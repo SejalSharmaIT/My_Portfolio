@@ -1,0 +1,788 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0A1F44; /* Dark Blue Navbar */
+  padding: 1rem 2rem;
+}
+
+nav .logo {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav .nav-links {
+  list-style: none;
+  display: flex;
+}
+
+nav .nav-links li {
+  margin-left: 20px;
+}
+
+nav .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+nav .nav-links a:hover {
+  color: #A8E4A0; /* Hover green color */
+}
+
+/* All Sections */
+section {
+  padding: 100px 20px;
+  text-align: center;
+  background-color: #A8E4A0; /* Granny Smith Apple background for all */
+}
+
+/* Section Headings */
+section h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #0A1F44; /* Dark blue headings for better contrast */
+}
+
+section p {
+  font-size: 1.2rem;
+  color: #333; /* Dark text for easy reading */
+}
+
+/* Home Content */
+.home-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  opacity: 0; /* Initial opacity */
+  animation: fadeInUp 1.2s forwards; /* Fade-in animation */
+}
+
+.image-content {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInLeft 1.2s forwards 0.4s; /* Fade-in from left */
+}
+
+.image-content img.profile-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #0A1F44; /* Dark blue border */
+  transform: scale(0.8); /* Start small */
+  animation: scaleIn 1s ease-out forwards 0.6s; /* Scale-up effect */
+  transition: transform 0.3s ease;
+}
+
+.image-content img.profile-image:hover {
+  transform: scale(1.1); /* Scale-up effect on hover */
+}
+
+/* Enhanced Text Style for Home Heading */
+.text-content h2 {
+  font-size: 3.5rem; /* Larger font size for more emphasis */
+  font-weight: 800; /* Bold weight for better visibility */
+  margin-bottom: 20px;
+  color: #1A2A6C; /* Deep blue color for the main text */
+  letter-spacing: 2px; /* Spacing between characters */
+  text-transform: uppercase; /* Uppercase letters for bold statement */
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+  animation: fadeInUp 2s ease-out forwards; /* Smooth fade-in animation */
+}
+
+/* Span Styling */
+.text-content h2 span {
+  color: #008080; /* Teal color for the name */
+  font-size: 3.8rem; /* Slightly larger size for the span to stand out */
+  font-weight: 900; /* Stronger weight for the span */
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+  letter-spacing: 1px;
+}
+
+/* Add Animation to the span */
+.text-content h2 span:hover {
+  transform: translateY(-5px); /* Slight upward movement */
+  color: #1A2A6C; /* Change text color on hover to deep blue */
+  text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}
+
+/* Animated Text for H2 */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #333;
+  list-style-type: none;
+  padding-left: 0;
+  opacity: 0;
+  animation: fadeInUp 1.2s forwards 1s; /* Fade-in for tagline items */
+}
+
+.tagline li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.tagline li::before {
+  content: '→'; /* Arrow for each list item */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+  color: #0A1F44; /* Arrow color */
+  opacity: 0;
+  animation: slideInArrow 0.8s forwards;
+}
+
+.tagline li:nth-child(1)::before {
+  animation-delay: 1s;
+}
+
+.tagline li:nth-child(2)::before {
+  animation-delay: 1.2s;
+}
+
+.tagline li:nth-child(3)::before {
+  animation-delay: 1.4s;
+}
+
+.tagline li:nth-child(4)::before {
+  animation-delay: 1.6s;
+}
+
+.tagline li:nth-child(5)::before {
+  animation-delay: 1.8s;
+}
+
+.tagline li:nth-child(6)::before {
+  animation-delay: 2s;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #0A1F44; /* Dark blue button */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 1s forwards 2.2s; /* Fade-in for button */
+}
+
+.btn:hover {
+  background-color: #06203B; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Animations */
+
+/* Fade in from the bottom */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in from the left */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade in from the right */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale-in effect for the profile image */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Arrow slide-in animation */
+@keyframes slideInArrow {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+/* About Section Styling */
+#about {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#about .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* About Section Heading */
+#about h2 {
+  font-size: 3rem;
+  color: #1A2A6C; /* Deep Blue */
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  animation: fadeInDown 1.5s ease-out forwards;
+}
+
+/* Underline Effect Below H2 */
+#about h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: #008080; /* Teal underline */
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* About Paragraph */
+#about p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  animation: fadeIn 2s ease-out forwards;
+}
+
+
+/* Animations */
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+/* Skills Section */
+#skills {
+  background-color: #A8E4A0; /* Granny Smith Apple background */
+  padding: 60px 20px;
+}
+
+#skills h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #0A1F44; /* Dark Blue */
+  position: relative;
+}
+
+#skills h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: #0A1F44;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+#skills h3 {
+  font-size: 2rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #0A1F44;
+}
+
+/* Skill container */
+.skill {
+  margin-bottom: 30px;
+}
+
+.skill-info {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between skill name and bar */
+}
+
+.skill-info p {
+  font-weight: bold;
+  color: #0A1F44;
+  min-width: 150px;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+}
+
+/* Skill Bar */
+.skill-bar {
+  background-color: #eee;
+  border-radius: 25px;
+  height: 25px;
+  width: 100%;
+  position: relative;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.skill-progress {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #0A1F44, #00A86B); /* Dark blue to green gradient */
+  color: white;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 10px;
+  line-height: 25px;
+  border-radius: 25px;
+  transition: width 2s ease-out; /* Smooth transition */
+}
+
+/* Scroll-triggered animation */
+.skill-progress[data-filled] {
+  animation: fillSkill 2s ease-out forwards;
+}
+
+/* Animation to fill progress bar */
+@keyframes fillSkill {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--width);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #skills h2 {
+    font-size: 2.5rem;
+  }
+
+  #skills h3 {
+    font-size: 1.75rem;
+  }
+
+  .skill-info p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #skills h2 {
+    font-size: 2.2rem;
+  }
+
+  .skill-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+
+/* Projects Section */
+#projects {
+  background-color: #A8E4A0;; /* Light background for contrast */
+  padding: 60px 20px;
+}
+
+#projects h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 40px;
+  color: #0A1F44; /* Dark Blue */
+  position: relative;
+}
+
+#projects h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: #0A1F44;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Project Cards Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 30px;
+  justify-items: center;
+}
+
+.project-card {
+  background-color: #d0f0c0; /* Granny Smith Apple background */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  width: 100%;
+  max-width: 320px; /* Maximum width for the card */
+}
+
+.project-card h3 {
+  font-size: 1.8rem;
+  color: #0A1F44;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.project-card .btn {
+  background-color: #0A1F44;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card .btn:hover {
+  background-color: #06203B;
+  transform: translateY(-3px);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium devices */
+  }
+
+  #projects h2 {
+    font-size: 2.5rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* 1 card per row on small devices */
+  }
+
+  #projects h2 {
+    font-size: 2rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .project-card p {
+    font-size: 0.8rem;
+  }
+}
+
+ 
+
+
+/* Contact Section */
+#contact {
+  background-color: #A8E4A0; /* Light background */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2.5rem;
+  color: #0A1F44; /* Dark Blue */
+  margin-bottom: 40px;
+}
+
+#contact h2::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background: #0A1F44;
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+#contact p {
+  font-size: 1.2rem;
+  color: #333; /* Dark gray text for better readability */
+  margin: 15px 0;
+}
+
+/* Flex container for links */
+#contact .contact-links {
+  display: flex;
+  justify-content: center; /* Aligns items to the center */
+  gap: 30px; /* Adds space between the items */
+  flex-wrap: wrap; /* Wraps the links in smaller screens */
+}
+
+#contact a {
+  color: #0A1F44; /* Dark Blue */
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#contact a:hover {
+  color: #00A86B; /* Green on hover */
+  transform: translateY(-5px); /* Slight move up effect */
+}
+
+#contact a:hover i {
+  color: #00A86B; /* Change icon color to match the text on hover */
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+#contact i {
+  font-size: 1.5rem;
+  margin-right: 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#contact a:active {
+  transform: translateY(2px); /* A subtle effect when the link is clicked */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #contact h2 {
+    font-size: 2rem;
+  }
+
+  #contact a {
+    font-size: 1rem;
+  }
+
+  #contact p {
+    font-size: 1rem;
+  }
+
+  #contact .contact-links {
+    flex-direction: column; /* Stack links vertically on smaller screens */
+    gap: 15px;
+  }
+}
+
+
+
+
+/* Footer Section */
+.footer {
+  background-color: #0A1F44; /* Dark Blue background for contrast */
+  color: #ffffff; /* White text */
+  padding: 40px 20px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer h4 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #00A86B; /* Green color for headers */
+  font-weight: bold;
+}
+
+.footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin: 10px 0;
+}
+
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover {
+  color: #00A86B; /* Green color on hover */
+  transform: translateX(5px); /* Slight right shift on hover */
+}
+
+.footer a i {
+  margin-right: 8px;
+  font-size: 1.3rem; /* Slightly larger icon */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer a:hover i {
+  transform: scale(1.1); /* Slight enlargement on hover */
+}
+
+/* Footer About Section */
+.footer-about {
+  max-width: 400px; /* Limit the width for readability */
+  margin-bottom: 20px;
+}
+
+.footer-about p {
+  font-size: 1rem;
+  color: #bbb; /* Light gray text for About */
+  line-height: 1.6; /* Increase line height for better readability */
+  margin-bottom: 15px; /* Add space between the paragraph and other content */
+}
+
+.footer-about p:hover {
+  color: #ffffff; /* Change text color to white when hovered */
+  cursor: pointer; /* Change cursor to pointer for interactivity */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.footer-about p a {
+  color: #00A86B; /* Set color for links in About section */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-about p a:hover {
+  color: #ffffff; /* Change link color to white when hovered */
+}
+
+
+/* Footer Bottom */
+.footer-bottom {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #bbb; /* Light gray text for the copyright section */
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer h4 {
+    text-align: center;
+  }
+
+  .footer ul {
+    text-align: center;
+  }
+}
